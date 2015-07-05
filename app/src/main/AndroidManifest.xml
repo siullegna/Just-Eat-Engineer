@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="justeatengineer.justeatengineer">
 
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
+        android:name=".application.JustEatApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
