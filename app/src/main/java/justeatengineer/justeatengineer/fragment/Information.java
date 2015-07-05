@@ -42,34 +42,11 @@ public class Information extends Fragment {
 
         gridLayoutManager = new GridLayoutManager(getActivity(), 2);
         recyclerView.setLayoutManager(gridLayoutManager);
+    }
 
-        List<DtoEntity> items = getItems();
-
+    public void setInformation(List<DtoEntity> items) {
         adapter = new AdapterInformation(getActivity(), items);
         recyclerView.setAdapter(adapter);
     }
 
-
-    private List<DtoEntity> getItems() {
-        List<DtoEntity> items = new ArrayList<>();
-        String[] cuisineTypes = {"cuisine Type A", "cuisine Type B"};
-        String url = "http://i.kinja-img.com/gawker-media/image/upload/ffhxlgjixt7tckss6d3l.jpg";
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        items.add(new DtoEntity(cuisineTypes, "Name 1", 4.67f, url));
-        return items;
-    }
 }

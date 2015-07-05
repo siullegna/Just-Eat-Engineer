@@ -41,13 +41,13 @@ public class AdapterInformation extends RecyclerView.Adapter<HolderInformation> 
 
     @Override
     public void onBindViewHolder(HolderInformation holder, int position) {
-        Picasso.with(context).load(items.get(position).getStandardResolutionURL()).into(holder.img);
+        Picasso.with(context).load(items.get(position).getStandardResolutionURL().get(0).getUrl()).into(holder.img);
 
         holder.txtName.setText(items.get(position).getName());
 
         String cuisines = "";
-        for (int i = 0; i < items.get(position).getCuisineTypes().length; i++) {
-            cuisines += items.get(position).getCuisineTypes()[i] + "\n";
+        for (int i = 0; i < items.get(position).getCuisineTypes().size(); i++) {
+            cuisines += items.get(position).getCuisineTypes().get(i).getName() + "\n";
         }
         holder.txtCuisine.setText(cuisines.trim());
 

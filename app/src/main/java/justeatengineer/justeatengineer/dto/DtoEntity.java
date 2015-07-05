@@ -1,15 +1,25 @@
 package justeatengineer.justeatengineer.dto;
 
-/**
- * Created by luisangelgarcia on 7/5/15.
- */
-public class DtoEntity {
-    private String Name;
-    private float RatingStars;
-    private String[] CuisineTypes;
-    private String StandardResolutionURL;
+import com.google.gson.annotations.SerializedName;
 
-    public DtoEntity(String[] cuisineTypes, String name, float ratingStars, String standardResolutionURL) {
+import java.util.List;
+
+
+public class DtoEntity {
+
+    @SerializedName("Name")
+    private String Name;
+
+    @SerializedName("RatingStars")
+    private float RatingStars;
+
+    @SerializedName("CuisineTypes")
+    private List<DtoCuisine> CuisineTypes;
+
+    @SerializedName("Logo")
+    private List<DtoLogo> StandardResolutionURL;
+
+    public DtoEntity(List<DtoCuisine> cuisineTypes, String name, float ratingStars, List<DtoLogo> standardResolutionURL) {
         CuisineTypes = cuisineTypes;
         Name = name;
         RatingStars = ratingStars;
@@ -17,11 +27,11 @@ public class DtoEntity {
     }
 
 
-    public String[] getCuisineTypes() {
+    public List<DtoCuisine> getCuisineTypes() {
         return CuisineTypes;
     }
 
-    public void setCuisineTypes(String[] cuisineTypes) {
+    public void setCuisineTypes(List<DtoCuisine> cuisineTypes) {
         CuisineTypes = cuisineTypes;
     }
 
@@ -41,11 +51,11 @@ public class DtoEntity {
         RatingStars = ratingStars;
     }
 
-    public String getStandardResolutionURL() {
+    public List<DtoLogo> getStandardResolutionURL() {
         return StandardResolutionURL;
     }
 
-    public void setStandardResolutionURL(String standardResolutionURL) {
+    public void setStandardResolutionURL(List<DtoLogo> standardResolutionURL) {
         StandardResolutionURL = standardResolutionURL;
     }
 }
